@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .is-loading{
+            background: red;
+            border: solid 3px blue;
+            border-radius: 4px;
+            width: 300px;
+            height:300px;
+            font-size: 50px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+
+
+        <button :class="{'is-loading': isLoading }" @click="toggleClass"> toggle me</button>
+    </div>
+
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isLoading: false
+        },
+
+        methods: {
+
+            toggleClass (){
+
+                this.isLoading =! this.isLoading ;
+
+
+            }
+
+        }
+    })
+
+
+    </script>
+</body>
+</html>
